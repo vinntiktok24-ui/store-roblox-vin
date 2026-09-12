@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STORE ROBLOX VIN</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">VIN<span>STORE</span></div>
+    <button class="cart" onclick="showCart()">🛒 <b id="cartCount">0</b></button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="tag">ROBLOX ITEM STORE</p>
+        <h1>STORE<br><span>ROBLOX VIN</span></h1>
+        <p class="desc">Tempat item Roblox: baju, celana, dan akun.</p>
+        <button class="primary" onclick="scrollToItems()">Lihat Item</button>
+      </div>
+      <div class="cube">ROBLOX<br>VIN</div>
+    </section>
+
+    <div class="categories">
+      <button class="active" onclick="filterItems('all', this)">Semua</button>
+      <button onclick="filterItems('baju', this)">👕 Baju</button>
+      <button onclick="filterItems('celana', this)">👖 Celana</button>
+      <button onclick="filterItems('akun', this)">👤 Akun</button>
+    </div>
+
+    <section id="items">
+      <h2>Produk</h2>
+      <div class="grid">
+        <article class="card" data-type="baju">
+          <div class="placeholder">👕<small>FOTO BAJU</small></div>
+          <h3>Baju Roblox #001</h3><p>Slot gambar produk</p>
+          <strong>Rp10.000</strong>
+          <button onclick="addCart('Baju Roblox #001')">Tambah</button>
+        </article>
+        <article class="card" data-type="celana">
+          <div class="placeholder">👖<small>FOTO CELANA</small></div>
+          <h3>Celana Roblox #001</h3><p>Slot gambar produk</p>
+          <strong>Rp10.000</strong>
+          <button onclick="addCart('Celana Roblox #001')">Tambah</button>
+        </article>
+        <article class="card" data-type="akun">
+          <div class="placeholder">👤<small>FOTO AKUN</small></div>
+          <h3>Akun Roblox #001</h3><p>Slot detail akun</p>
+          <strong>Rp50.000</strong>
+          <button onclick="addCart('Akun Roblox #001')">Tambah</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="info">
+      <h2>🛍️ Etalase VIN</h2>
+      <p>Nanti setiap produk bisa diganti dengan foto, nama, harga, dan deskripsi item milikmu.</p>
+    </section>
+  </main>
+
+  <footer>© 2026 STORE ROBLOX VIN</footer>
+  <script src="script.js"></script>
+</body>
+</html>
