@@ -3,65 +3,163 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>STORE ROBLOX VIN</title>
-  <link rel="stylesheet" href="style.css">
-  <meta name="google-site-verification" content="Mwh_i1Z4iuXqhtqbBdclwuGdyIWqlwSfYfh0zHLGT1o" />
+  <meta name="theme-color" content="#08090f">
+  <meta name="description" content="VIN STORE - Marketplace item Roblox modern dan terpercaya.">
+  <title>VIN STORE — Roblox Marketplace</title>
+  <link rel="stylesheet" href="style_baru.css">
+  <meta name="google-site-verification" content="Mwh_i1Z4iuXqhtqbBdclwuGdyIWqlwSfYfh0zHLGT1o">
 </head>
 <body>
-  <header>
-    <div class="logo">VIN<span>STORE</span></div>
-    <button class="cart" onclick="showCart()">🛒 <b id="cartCount">0</b></button>
+  <div class="bg-glow glow-one"></div>
+  <div class="bg-glow glow-two"></div>
+
+  <header class="navbar">
+    <a href="#" class="brand" aria-label="VIN STORE">
+      <span class="brand-mark">V</span>
+      <span>VIN<span class="accent">STORE</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#home">Beranda</a>
+      <a href="#items">Produk</a>
+      <a href="#cara-order">Cara Order</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <button class="cart nav-cart" onclick="showCart()" aria-label="Buka keranjang">
+      <span>🛒</span><b id="cartCount">0</b>
+    </button>
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Buka menu">☰</button>
   </header>
 
   <main>
-    <section class="hero">
-      <div>
-        <p class="tag">ROBLOX ITEM STORE</p>
-        <h1>STORE<br><span>ROBLOX VIN</span></h1>
-        <p class="desc">Tempat item Roblox: baju, celana, dan akun.</p>
-        <button class="primary" onclick="scrollToItems()">Lihat Item</button>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="live-dot"></span> ROBLOX MARKETPLACE</div>
+        <h1>Temukan item Roblox<br><span>favoritmu di VIN STORE.</span></h1>
+        <p>Belanja baju, celana, dan akun Roblox dengan tampilan simpel, proses mudah, dan bantuan admin saat checkout.</p>
+        <div class="hero-actions">
+          <button class="primary" onclick="scrollToItems()">Mulai Belanja <span>→</span></button>
+          <a class="ghost-btn" href="#cara-order">Cara Order</a>
+        </div>
+        <div class="hero-trust">
+          <div><strong>100%</strong><span>Proses mudah</span></div>
+          <i></i>
+          <div><strong>24/7</strong><span>Chat admin</span></div>
+          <i></i>
+          <div><strong>VIN</strong><span>Store</span></div>
+        </div>
       </div>
-      <div class="cube">ROBLOX<br>VIN</div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orb orb-a"></div>
+        <div class="orb orb-b"></div>
+        <div class="roblox-card card-back"></div>
+        <div class="roblox-card card-main">
+          <div class="card-top"><span>VIN</span><span>✦</span></div>
+          <div class="avatar-shape"><span>V</span></div>
+          <div class="mini-lines"><span></span><span></span><span></span></div>
+          <div class="floating-badge">ROBLOX</div>
+        </div>
+      </div>
     </section>
 
-    <div class="categories">
-      <button class="active" onclick="filterItems('all', this)">Semua</button>
-      <button onclick="filterItems('baju', this)">👕 Baju</button>
-      <button onclick="filterItems('celana', this)">👖 Celana</button>
-      <button onclick="filterItems('akun', this)">👤 Akun</button>
-    </div>
+    <section class="features">
+      <div class="feature"><span class="feature-icon">⚡</span><div><b>Praktis</b><small>Pilih dan checkout dengan mudah</small></div></div>
+      <div class="feature"><span class="feature-icon">🛡️</span><div><b>Lebih nyaman</b><small>Detail pesanan jelas sebelum beli</small></div></div>
+      <div class="feature"><span class="feature-icon">💬</span><div><b>Admin siap bantu</b><small>Konfirmasi lewat chat WhatsApp</small></div></div>
+      <div class="feature"><span class="feature-icon">💎</span><div><b>Harga terjangkau</b><small>Pilihan item untuk berbagai kebutuhan</small></div></div>
+    </section>
 
-    <section id="items">
-      <h2>Produk</h2>
+    <section class="products-section" id="items">
+      <div class="section-heading">
+        <div><span class="section-label">KOLEKSI VIN STORE</span><h2>Produk pilihan</h2><p>Pilih kategori lalu temukan item yang kamu cari.</p></div>
+        <div class="categories">
+          <button class="active" onclick="filterItems('all', this)">Semua</button>
+          <button onclick="filterItems('baju', this)">👕 Baju</button>
+          <button onclick="filterItems('celana', this)">👖 Celana</button>
+          <button onclick="filterItems('akun', this)">👤 Akun</button>
+        </div>
+      </div>
+
       <div class="grid">
         <article class="card" data-type="baju">
-          <div class="placeholder">👕<small>FOTO BAJU</small></div>
-          <h3>Baju Roblox #001</h3><p>Slot gambar produk</p>
-          <strong>Rp10.000</strong>
-          <button onclick="addCart('Baju Roblox #001')">Tambah</button>
+          <div class="product-image" onclick="openProduct(1)">
+            <span class="product-badge">POPULER</span><div class="placeholder">👕</div>
+            <button class="quick-view" onclick="event.stopPropagation();openProduct(1)">↗</button>
+          </div>
+          <div class="card-body">
+            <span class="product-type">BAJU ROBLOX</span>
+            <h3>Baju Roblox #001</h3>
+            <p>Baju Roblox keren dan siap digunakan.</p>
+            <div class="price-row"><strong>Rp10.000</strong><span>Stok tersedia</span></div>
+            <button class="buy-btn" onclick="addCart(1)">Tambah ke Keranjang <span>+</span></button>
+            <button class="detail-btn" onclick="openProduct(1)">Lihat Detail</button>
+          </div>
         </article>
+
         <article class="card" data-type="celana">
-          <div class="placeholder">👖<small>FOTO CELANA</small></div>
-          <h3>Celana Roblox #001</h3><p>Slot gambar produk</p>
-          <strong>Rp10.000</strong>
-          <button onclick="addCart('Celana Roblox #001')">Tambah</button>
+          <div class="product-image" onclick="openProduct(2)">
+            <span class="product-badge">BARU</span><div class="placeholder">👖</div>
+            <button class="quick-view" onclick="event.stopPropagation();openProduct(2)">↗</button>
+          </div>
+          <div class="card-body">
+            <span class="product-type">CELANA ROBLOX</span>
+            <h3>Celana Roblox #001</h3>
+            <p>Celana Roblox untuk melengkapi outfit.</p>
+            <div class="price-row"><strong>Rp10.000</strong><span>Stok tersedia</span></div>
+            <button class="buy-btn" onclick="addCart(2)">Tambah ke Keranjang <span>+</span></button>
+            <button class="detail-btn" onclick="openProduct(2)">Lihat Detail</button>
+          </div>
         </article>
+
         <article class="card" data-type="akun">
-          <div class="placeholder">👤<small>FOTO AKUN</small></div>
-          <h3>Akun Roblox #001</h3><p>Slot detail akun</p>
-          <strong>Rp50.000</strong>
-          <button onclick="addCart('Akun Roblox #001')">Tambah</button>
+          <div class="product-image" onclick="openProduct(3)">
+            <span class="product-badge">AKUN</span><div class="placeholder">👤</div>
+            <button class="quick-view" onclick="event.stopPropagation();openProduct(3)">↗</button>
+          </div>
+          <div class="card-body">
+            <span class="product-type">AKUN ROBLOX</span>
+            <h3>Akun Roblox #001</h3>
+            <p>Akun Roblox dengan detail yang dapat dikonfirmasi.</p>
+            <div class="price-row"><strong>Rp50.000</strong><span>Detail via admin</span></div>
+            <button class="buy-btn" onclick="addCart(3)">Tambah ke Keranjang <span>+</span></button>
+            <button class="detail-btn" onclick="openProduct(3)">Lihat Detail</button>
+          </div>
         </article>
       </div>
     </section>
 
-    <section class="info">
-      <h2>🛍️ Etalase VIN</h2>
-      <p>Nanti setiap produk bisa diganti dengan foto, nama, harga, dan deskripsi item milikmu.</p>
+    <section class="steps-section" id="cara-order">
+      <div class="section-heading centered"><span class="section-label">SANGAT MUDAH</span><h2>Cara order di VIN STORE</h2><p>Hanya beberapa langkah untuk menyelesaikan pesanan.</p></div>
+      <div class="steps">
+        <div class="step"><span>01</span><div class="step-icon">🔎</div><h3>Pilih produk</h3><p>Temukan item Roblox yang kamu inginkan.</p></div>
+        <div class="step"><span>02</span><div class="step-icon">🛒</div><h3>Masukkan keranjang</h3><p>Tambahkan produk dan cek jumlah pesananmu.</p></div>
+        <div class="step"><span>03</span><div class="step-icon">💳</div><h3>Isi checkout</h3><p>Masukkan nama, username Roblox, dan payment.</p></div>
+        <div class="step"><span>04</span><div class="step-icon">💬</div><h3>Konfirmasi admin</h3><p>Kamu akan diarahkan ke WhatsApp admin.</p></div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div><span class="section-label">SIAP BERBELANJA?</span><h2>Lengkapi koleksi Roblox kamu.</h2><p>Pilih item favoritmu dan mulai order sekarang.</p></div>
+      <button class="primary" onclick="scrollToItems()">Lihat Produk <span>→</span></button>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="section-heading centered"><span class="section-label">BANTUAN</span><h2>Pertanyaan umum</h2></div>
+      <details><summary>Bagaimana cara membeli produk?<span>+</span></summary><p>Pilih produk, masukkan ke keranjang, lalu tekan Checkout. Isi data yang diminta dan pilih metode payment. Setelah itu kamu akan diarahkan ke chat admin.</p></details>
+      <details><summary>Apakah saya bisa bertanya sebelum membeli?<span>+</span></summary><p>Bisa. Gunakan detail produk untuk melihat informasi yang tersedia dan konfirmasi lebih lanjut melalui admin saat proses order.</p></details>
+      <details><summary>Bagaimana proses pembayaran?<span>+</span></summary><p>Pilih metode payment yang tersedia pada halaman checkout. Detail pembayaran akan dikonfirmasi oleh admin melalui WhatsApp.</p></details>
     </section>
   </main>
 
-  <footer>© 2026 STORE ROBLOX VIN</footer>
-  <script src="script.js"></script>
+  <footer>
+    <div class="footer-main"><div class="brand footer-brand"><span class="brand-mark">V</span><span>VIN<span class="accent">STORE</span></span></div><p>Marketplace item Roblox sederhana untuk kebutuhan gaming kamu.</p><div class="footer-links"><a href="#home">Beranda</a><a href="#items">Produk</a><a href="#cara-order">Cara Order</a><a href="#faq">FAQ</a></div></div>
+    <div class="footer-bottom"><span>© 2026 VIN STORE. All rights reserved.</span><span>Made for Roblox players.</span></div>
+  </footer>
+
+  <div id="productModal" class="modal"><div class="modal-box"><button class="close" onclick="closeModal('productModal')">×</button><div id="productDetail"></div></div></div>
+  <div id="cartModal" class="modal"><div class="modal-box"><button class="close" onclick="closeModal('cartModal')">×</button><div class="modal-title"><span>🛒</span><div><span class="section-label">PESANAN</span><h2>Keranjang</h2></div></div><div id="cartItems"></div><div id="cartTotal" class="total"></div><button class="checkout-btn" onclick="openCheckout()">Lanjut Checkout <span>→</span></button></div></div>
+  <div id="checkoutModal" class="modal"><div class="modal-box"><button class="close" onclick="closeModal('checkoutModal')">×</button><div class="modal-title"><span>💳</span><div><span class="section-label">CHECKOUT</span><h2>Konfirmasi pesanan</h2></div></div><div id="checkoutSummary"></div><label class="label">Nama</label><input id="buyerName" class="input" type="text" placeholder="Masukkan nama"><label class="label">Username Roblox</label><input id="robloxName" class="input" type="text" placeholder="Masukkan username Roblox"><label class="label">Metode payment</label><div class="payment-options"><label><input type="radio" name="payment" value="DANA"> DANA</label><label><input type="radio" name="payment" value="OVO"> OVO</label><label><input type="radio" name="payment" value="GoPay"> GoPay</label><label><input type="radio" name="payment" value="QRIS"> QRIS</label><label><input type="radio" name="payment" value="Transfer Bank"> Transfer Bank</label></div><div class="notice">Setelah checkout, kamu akan diarahkan ke chat admin untuk konfirmasi pesanan dan pembayaran.</div><button class="checkout-btn" onclick="finishCheckout()">Lanjut ke Chat Admin <span>→</span></button></div></div>
+
+  <footer class="mobile-spacer"></footer>
+  <script src="script_baru.js"></script>
 </body>
 </html>
